@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Task Manager</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Task Manager</h1>
+        <div class="form-group">
+            <input type="text" id="task" class="form-control" placeholder="Add a task...">
+        </div>
+        <div class="form-group">
+            <input type="date" id="due-date" class="form-control" placeholder="Due Date">
+        </div>
+        <input type="file" id="image" class="form-control mt-3" accept="image/*" />
+        <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+        <div class="form-group mt-3">
+            <input type="text" id="search" class="form-control" placeholder="Search tasks...">
+        </div>
+        <div class="form-check mt-3">
+            <input type="checkbox" id="show-completed" class="form-check-input" onchange="updateTaskList()">
+            <label class="form-check-label">Show Completed Tasks</label>
+        </div>
+        <div class="mt-4">
+            <label for="sort-select">Sort by Due Date:</label>
+            <select id="sort-select" class="form-control" onchange="updateTaskList()">
+                <option value="none">None</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </div>
+        <ul id="task-list" class="list-group mt-4">
+        </ul>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
